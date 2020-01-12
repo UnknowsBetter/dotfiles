@@ -1,19 +1,19 @@
 set $mod Mod1
 
-default_border pixel 2
+default_border pixel 3
 new_float normal
 
 # hide_edge_borders none
 
 bindsym $mod+u border none
-bindsym $mod+y border pixel 2
+bindsym $mod+y border pixel 3
 bindsym $mod+n border normal
 
 exec xrandr -s 1920x1080_60.00
 
 # remap the cap key to esc
 #exec --no-startup-id setxkbmap -option caps:escape
-font pango: DejaVu Sans Mono 10
+font pango: 12
 
 floating_modifier $mod
 
@@ -24,7 +24,7 @@ bindsym $mod+m exec xfce4-terminal
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+o exec --no-startup-id rofi -show run -modi drun
+bindsym $mod+o exec --no-startup-id rofi -show run
 
 
 # change focus
@@ -59,7 +59,7 @@ bindsym $mod+v split v;exec notify-send 'Vertically'
 bindsym $mod+q split toggle; exec notify-send 'Tile Toggle'
 
 # toggle fullscreen mode for the focused container
-bindsym $mod+Shift++f fullscreen toggle
+bindsym $mod+i fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -251,30 +251,31 @@ exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
 bar {
+ tray_output none
 i3bar_command i3bar 
 #mode hide
 #hidden_state hide
 #modifier Mod4
-status_command /home/ryan/bumblebee-status/bumblebee-status -m datetime dnf indicator  disk  cpu memory  pasink pasource -p interval=2 time.format="%H:%M CW %V" date.format="%a, %b %d %Y" home.path=/home -t greyish-powerline
+status_command /home/installer/bumblebee-status/bumblebee-status -m date dnf indicator  disk  cpu memory  pasink pasource battery time -p interval=0.5 time.format="%H:%M  " date.format="%a, %b %d %Y" home.path=/home -t greyish-powerline
      # status_command i3status
      position top
       colors {
-              background #101010
+              background #000000
               statusline #eeeeee
  
              # border padding font
-             active_workspace    #00aa00 #000000 #ffffff
-             focused_workspace   #00aa00 #00aa00 #ffffff
-              inactive_workspace #000000 #000000 #ffffff
-              urgent_workspace   #000000 #000000 #ffffff
-              binding_mode       #000000 #000000 #ffffff
+             active_workspace    #ffffff #000000 #ffffff
+             focused_workspace   #ffffff #ff0000 #ffffff
+              inactive_workspace #ffffff #000000 #ffffff
+              urgent_workspace   #ffffff #000000 #ffffff
+              binding_mode       #ffffff #000000 #ffffff
           }
      strip_workspace_numbers yes
  }
 
 # Theme colors
 # class    border  backgr. text    indicator child_border
-client.focused          #000000 #f6f5f4 #eeeeee #f6f5f4 #f6f5f4
+client.focused          #000000 #ff0000 #ffffff #ff0000 #ff0000
 client.focused_inactive #ff5700 #000000 #657b83 #000000 #000000
 client.unfocused        #000000 #000000 #657b83 #000000 #222222
 client.urgent           #000000 #000000 #657b83 #000000 #000000
