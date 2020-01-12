@@ -1,2 +1,1 @@
-# dotfiles
-Manjaro configs
+# manjaro configurations
