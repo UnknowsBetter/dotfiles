@@ -12,10 +12,15 @@ bindsym $mod+n border normal
 exec xrandr -s 1920x1080_60.00
 
 # remap the cap key to esc
+#font pango: 'FontAwesome 8'
 #exec --no-startup-id setxkbmap -option caps:escape
-# font pango: 'Ubuntu Mono derivative Powerline Regular'14
-font pango: 13
-# font pango: 'UbuntuMono  Mono Nerd Font' 13
+#font pango: 'A'14
+#font pango: 13
+#font pango: 'UbuntuMono  Mono Nerd Font' 13
+#font pango:DejaVu Sans Mono 11
+#font pango:'FontAwesome Regular' 11
+#font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 11
+#font pango:Terminus 11px
 floating_modifier $mod
 
 # bindsym $mod+p exec gnome-terminal
@@ -63,8 +68,8 @@ bindsym $mod+q split toggle; exec notify-send 'Tile Toggle'
 bindsym $mod+i fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -100,8 +105,8 @@ set $ws5 05
 set $ws6 06
 set $ws7 07
 set $ws8 08
-set $ws9 09
-set $ws0 10
+# set $ws9 09
+# set $ws0 10
 
 #: 1
 #: 2
@@ -122,8 +127,8 @@ bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws0
+# bindsym $mod+9 workspace $ws9
+# bindsym $mod+0 workspace $ws0
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -134,7 +139,7 @@ bindsym $mod+Ctrl+5 move container to workspace $ws5
 bindsym $mod+Ctrl+6 move container to workspace $ws6
 bindsym $mod+Ctrl+7 move container to workspace $ws7
 bindsym $mod+Ctrl+8 move container to workspace $ws8
-bindsym $mod+Ctrl+9 move container to workspace $ws9
+# bindsym $mod+Ctrl+9 move container to workspace $ws9
 
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
@@ -146,7 +151,7 @@ bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws0; workspace $ws0
+# bindsym $mod+Shift+0 move container to workspace $ws0; workspace $ws0
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -275,8 +280,8 @@ i3bar_command i3bar
 #modifier Mod4
 
 #status_command i3status
-status_command /home/ryan/bumblebee-status/bumblebee-status -m date indicator  disk  cpu memory  pasink pasource battery time -p interval=0.5 time.format="%H:%M  " date.format="%a, %b %d %Y" home.path=/home -t greyish-powerline
-     position top
+status_command /home/ryan/bumblebee-status/bumblebee-status -m date cpu memory  pasink  battery time -p interval=0.5 time.format="%H:%M  " date.format="%a, %b %d %Y" home.path=/home -t greyish-powerline
+     #position top
       colors {
               background #000000
               statusline #ffffff
